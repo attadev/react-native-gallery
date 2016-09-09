@@ -16,6 +16,7 @@ export default class Gallery extends Component {
 
     initialPage: PropTypes.number,
     pageMargin: PropTypes.number,
+    maxScale: PropTypes.number,
     onPageSelected: PropTypes.func,
     onPageScrollStateChanged: PropTypes.func,
     onPageScroll: PropTypes.func,
@@ -233,6 +234,8 @@ export default class Gallery extends Component {
            this.imageRefs.set(pageId, ref);
         }).bind(this)}
         key={'innerImage#' + pageId}
+        width={layout.width}
+        height={layout.height}
         style={{width: layout.width, height: layout.height}}
         source={{uri: pageData}}/>
     );
